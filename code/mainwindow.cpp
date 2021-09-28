@@ -50,7 +50,7 @@ MainWindow::~MainWindow() {
 void MainWindow::ClearWidgets() {
   ui->Name->setText("");
   ui->Status->setText("");
-  ui->Status->setText("");
+  ui->Subject->setText("");
   ui->Query_line->setText("");
   ui->Statement_date->setDate(QDate(2000, 1, 1));
   ui->Solution_date->setDate(QDate(2000, 1, 1));
@@ -158,7 +158,7 @@ void MainWindow::Save() {
     Tasks[ui->Tasks->currentRow()].setstatus(
         ui->Status->text()); //Сохранение введённого статуса
     Tasks[ui->Tasks->currentRow()].setsubject(
-        ui->Status->text()); //Сохранение введённого предмета исследования
+        ui->Subject->text()); //Сохранение введённого предмета исследования
     Tasks[ui->Tasks->currentRow()].setinstitutefk(
         ui->Institute_name
             ->currentText()); //Сохранение выбранного имени института
@@ -209,7 +209,7 @@ void MainWindow::Select() {
   }
   case 1: {
     //Запись в виджеты сохранённых полей объекта задачи
-    ui->Status->setText(Tasks[ui->Tasks->currentRow()].getsubject());
+    ui->Subject->setText(Tasks[ui->Tasks->currentRow()].getsubject());
     ui->Status->setText(Tasks[ui->Tasks->currentRow()].getstatus());
     ui->Statement_date->setDate(
         Tasks[ui->Tasks->currentRow()].getstatementdate());
